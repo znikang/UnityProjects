@@ -83,6 +83,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 121725970}
   - 20: {fileID: 121725971}
+  - 114: {fileID: 121725972}
   m_Layer: 0
   m_Name: HealthCamera
   m_TagString: Untagged
@@ -132,6 +133,19 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
   m_OcclusionCulling: 1
+--- !u!114 &121725972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 121725969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d1829da83711645b6f6d6649ab9caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Width: 16
+  m_Height: 9
 --- !u!1 &278595318
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +266,62 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1434555353}
+--- !u!1 &617621799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 617621804}
+  - 20: {fileID: 617621803}
+  m_Layer: 0
+  m_Name: ClearCamera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!20 &617621803
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617621799}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -10
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_HDR: 0
+  m_OcclusionCulling: 1
+--- !u!4 &617621804
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 617621799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &637372298
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,8 +666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95adbcf047e37e744bc7cbec490f021c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HealthController: {fileID: 1178000925}
-  m_MainCamera: {fileID: 1423495941}
   m_Cube: {fileID: 1646371544}
   m_TargetPointArray:
   - {fileID: 607912948}
@@ -610,6 +678,8 @@ MonoBehaviour:
   m_AttackSpeed: 1.5
   m_AttackPower: 10
   m_HP: 100
+  m_MainCamera: {fileID: 1423495941}
+  m_HealthController: {fileID: 1178000925}
 --- !u!4 &1284174442
 Transform:
   m_ObjectHideFlags: 0
@@ -633,6 +703,7 @@ GameObject:
   - 124: {fileID: 1423495940}
   - 92: {fileID: 1423495939}
   - 81: {fileID: 1423495938}
+  - 114: {fileID: 1423495943}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -701,6 +772,19 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 637372299}
+--- !u!114 &1423495943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1423495937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10d1829da83711645b6f6d6649ab9caf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Width: 16
+  m_Height: 9
 --- !u!1 &1434555352
 GameObject:
   m_ObjectHideFlags: 0
