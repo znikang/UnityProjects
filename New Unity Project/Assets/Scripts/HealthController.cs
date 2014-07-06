@@ -10,6 +10,8 @@ public class HealthController : MonoBehaviour
 	private float m_MaxTowerHP = 0; //塔的最大血量
 	private float m_MaxEnemyHP = 0; //攻擊者的最大血厘
 	
+	public TextController m_TextController = null; //文字控制器
+	
 	//初始化塔血條
 	public void InitTowerHealth (float maxHP)
 	{
@@ -21,11 +23,13 @@ public class HealthController : MonoBehaviour
 		m_MaxEnemyHP = 1.0f / maxHP; //算出最大血量的比率
 	}
 	//更新塔血條
-	public void UpdateTowerHealth (float hp)
+	public void UpdateTowerHealth (float hp, float damage)
 	{
 		float scale = hp * m_MaxTowerHP; //算出血量比率後, 設定血條縮放值
 		Vector3 localScale = new Vector3 (scale, 1.0f, 1.0f); 
 		m_TowerHealth.transform.localScale = localScale;
+		
+		m_TextController.SetText(damage.ToString()); //傳送傷害文字
 	}
 	//更新攻擊者血條
 	public void UpdateEnemyHealth (float hp)
@@ -38,6 +42,9 @@ public class HealthController : MonoBehaviour
 	public void SetTowerHealthPosition (Vector3 pos)
 	{
 		Vector3 worldPos = m_HealthCamera.ScreenToWorldPoint (pos); //將螢幕上的座標轉成世界座標, 並更新塔的血條位置
+		
+		m_TextController.SetHealthPosition(worldPos); //傳入血條座標
+		
 		worldPos.x = worldPos.x - m_Offset;
 		m_TowerHealth.transform.position = worldPos;
 	}

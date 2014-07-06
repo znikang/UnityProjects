@@ -12,7 +12,7 @@ public class TowerManage : MonoBehaviour {
 	public void SendDamage(float damage)
 	{
 		m_HP = m_HP - damage; //把血量扣除傷害
-		m_HealthController.UpdateTowerHealth(m_HP); //更新血條長度
+		m_HealthController.UpdateTowerHealth(m_HP, damage); //更新血條長度
 		if (m_HP <= 0) { //如果血量小於等於0, 就把被攻擊目標關閉
 			m_HP = 0; 
 			m_Tower.SetActive(false); 
